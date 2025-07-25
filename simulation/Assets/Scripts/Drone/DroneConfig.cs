@@ -124,9 +124,8 @@ namespace hakoniwa.drone
                     float y_off = lidar.transform.parent.parent.position.y;
                     Vector3 v = new Vector3(x, y, z);
                     Vector3 v_unity = ConvertRos2Unity(v);
-                    v_unity.y += y_off;
+                    lidar.transform.parent.localPosition = v_unity;
                     Debug.Log("v: " + v_unity);
-                    lidar.transform.parent.position = v_unity;
                     //angle
                     float roll = loadedData.drones[droneName].LiDARs[lidar.transform.parent.gameObject.name].Roll;
                     float pitch = loadedData.drones[droneName].LiDARs[lidar.transform.parent.gameObject.name].Pitch;
@@ -134,7 +133,7 @@ namespace hakoniwa.drone
                     Vector3 euler_angle = new Vector3(roll, pitch, yaw);
                     Vector3 euler_angle_unity = -ConvertRos2Unity(euler_angle);
                     Debug.Log("euler_angle: " + euler_angle_unity);
-                    lidar.transform.parent.eulerAngles = euler_angle_unity;
+                    lidar.transform.parent.localEulerAngles = euler_angle_unity;
                 }
             }
         }

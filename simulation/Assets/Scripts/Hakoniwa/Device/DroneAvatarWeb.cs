@@ -2,6 +2,7 @@ using hakoniwa.drone;
 using hakoniwa.drone.sim;
 using hakoniwa.objects.core;
 using hakoniwa.objects.core.sensors;
+using hakoniwa.pdu.core;
 using hakoniwa.pdu.interfaces;
 using hakoniwa.pdu.msgs.geometry_msgs;
 using hakoniwa.pdu.msgs.hako_mavlink_msgs;
@@ -30,7 +31,7 @@ public class DroneAvatarWeb : MonoBehaviour, IHakoniwaWebObject, IDroneBatterySt
     private hakoniwa.pdu.msgs.hako_msgs.HakoBatteryStatus battery_status;
     public DroneCameraController camera_controller;
     private DroneConfig droneConfig;
-    private ILiDAR3DController[] lidars;
+    private ILiDAR3DController[] lidars = null;
     private Wind wind;
     public double sea_level_atm = 1.0;
     public double sea_level_temperature = 15.0;
@@ -99,6 +100,23 @@ public class DroneAvatarWeb : MonoBehaviour, IHakoniwaWebObject, IDroneBatterySt
             Twist pos = new Twist(pdu_pos);
             //Debug.Log($"Twist ({pos.linear.x} {pos.linear.y} {pos.linear.z})");
             UpdatePosition(pos);
+
+            if (lidars == null)
+            {
+                var local_lidars = this.GetComponentsInChildren<ILiDAR3DController>();
+                if (local_lidars != null)
+                {
+                    if (droneConfig)
+                    {
+                        droneConfig.SetLidarPosition(robotName);
+                    }
+                    foreach (var lidar in local_lidars)
+                    {
+                        lidar.DoInitialize(robotName, pduManager);
+                    }
+                    lidars = local_lidars;
+                }
+            }
         }
 
         /*
@@ -379,16 +397,20 @@ public class DroneAvatarWeb : MonoBehaviour, IHakoniwaWebObject, IDroneBatterySt
         /*
          * LiDAR
          */
-        lidars = this.GetComponentsInChildren<ILiDAR3DController>();
-        if (lidars != null)
+        // lidars's initialization must be done on drone's position is received...
+        lidars = null;
+        var local_lidars = this.GetComponentInChildren<ILiDAR3DController>();
+        if (local_lidars != null)
         {
-            if (droneConfig)
+            ret = await pduManager.DeclarePduForWrite(robotName, Default3DLiDARController.pdu_name_lidar_pos);
+            if (ret == false)
             {
-                droneConfig.SetLidarPosition(robotName);
+                throw new ArgumentException($"Can not declare pdu for read: {robotName} {Default3DLiDARController.pdu_name_lidar_pos}");
             }
-            foreach (var lidar in lidars)
+            ret = await pduManager.DeclarePduForWrite(robotName, Default3DLiDARController.pdu_name_lidar_point_cloud);
+            if (ret == false)
             {
-                lidar.DoInitialize(robotName, pdu_manager);
+                throw new ArgumentException($"Can not declare pdu for read: {robotName} {Default3DLiDARController.pdu_name_lidar_point_cloud}");
             }
         }
         /*
