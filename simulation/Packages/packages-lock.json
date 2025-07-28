@@ -14,7 +14,7 @@
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.0.2"
       },
-      "hash": "5b0b0913c44073c9fdb29b2dc6d08d94422a1f8c"
+      "hash": "2908128695c80f8979b6cafc0fe99fd4e8f85a46"
     },
     "com.hakoniwa-lab.hakoniwa-sim": {
       "version": "https://github.com/toppers/hakoniwa-sim-csharp.git",
