@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Avatar.unity
-    guid: a9d65bf5af2d94be1a7e8a41fa242267
+    path: Assets/Scenes/ArDroneTrain.unity
+    guid: ddf520a497bd84f4fbe21282ec6cbbfe
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: c4537d3b55fe34463b083364cc186d6f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 08bb70a8cca0e4a0d8a347fdf332c051, type: 3}
