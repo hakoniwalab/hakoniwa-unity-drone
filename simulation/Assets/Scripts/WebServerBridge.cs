@@ -22,7 +22,7 @@ public class WebServerBridge : MonoBehaviour, IHakoPduInstance
     public static IHakoPduInstance Instance { get; private set; }
     public List<GameObject> hako_objects;
     private IEnvironmentService service;
-    public string serverUri = "ws://localhost:8765";
+    private string serverUri = "ws://localhost:8765";
     public string serverUriConfigPath = "./server-uri.json";
     [SerializeField]
     private string pduConfigPath = ".";
