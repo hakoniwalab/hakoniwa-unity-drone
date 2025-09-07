@@ -14,10 +14,16 @@ public interface IHakoniwaWebObject
 
 public class WebServerBridge : MonoBehaviour, IHakoPduInstance
 {
+    [System.Serializable]
+    private class ServerUriConfig
+    {
+        public string uri;
+    }
     public static IHakoPduInstance Instance { get; private set; }
     public List<GameObject> hako_objects;
     private IEnvironmentService service;
     public string serverUri = "ws://localhost:8765";
+    public string serverUriConfigPath = "./server-uri.json";
     [SerializeField]
     private string pduConfigPath = ".";
     [SerializeField]
@@ -29,9 +35,9 @@ public class WebServerBridge : MonoBehaviour, IHakoPduInstance
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // ?V?[????????????????
+            DontDestroyOnLoad(gameObject);
         }
-        else if (!ReferenceEquals(Instance, this)) // Unity ???L?????r???x??????????
+        else if (!ReferenceEquals(Instance, this)) 
         {
             Destroy(gameObject);
         }
@@ -59,6 +65,23 @@ public class WebServerBridge : MonoBehaviour, IHakoPduInstance
         if (service == null)
         {
             throw new System.Exception("Can not create service...");
+        }
+        if (System.IO.File.Exists(serverUriConfigPath))
+        {
+            try
+            {
+                string json = System.IO.File.ReadAllText(serverUriConfigPath);
+                ServerUriConfig config = JsonUtility.FromJson<ServerUriConfig>(json);
+                if (config != null && !string.IsNullOrEmpty(config.uri))
+                {
+                    serverUri = config.uri;
+                    Debug.Log("Loaded server URI from config: " + serverUri);
+                }
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning("Failed to read server-uri.json: " + e.Message);
+            }
         }
 
         mgr = new PduManager(service, pduConfigPath, customJsonFilePath);
