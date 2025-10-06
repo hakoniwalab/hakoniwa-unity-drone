@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hako_objects:
   - {fileID: 1695392813040080385}
-  serverUri: ws://172.31.9.252:8765
+  serverUriConfigPath: ./server-uri.json
   pduConfigPath: .
   customJsonFilePath: ./webavatar.json
   filesystem_type: local
@@ -1024,6 +1024,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DroneMap
       objectReference: {fileID: 0}
+    - target: {fileID: 4456827622994142058, guid: 9c6d13f1f6387471ea33cb7d4a9eaf0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6455985974405846811, guid: 9c6d13f1f6387471ea33cb7d4a9eaf0b, type: 3}
       propertyPath: drone
       value: 
@@ -1232,7 +1236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 132687542448910611}
   currentMode: 0
-  wheelSpeed: 1
+  wheelSpeed: 0.1
   moveSpeed: 1
   rotateSpeed: 1
   useGimbal: 0
@@ -1247,6 +1251,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 239019499}
     m_Modifications:
+    - target: {fileID: 267864097499967040, guid: e15a004c8e86f422c85f1b6da8453405, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 536046197445587560, guid: e15a004c8e86f422c85f1b6da8453405, type: 3}
       propertyPath: drone
       value: 
@@ -1254,6 +1262,10 @@ PrefabInstance:
     - target: {fileID: 1621984593301680901, guid: e15a004c8e86f422c85f1b6da8453405, type: 3}
       propertyPath: m_Name
       value: DroneStatusPos
+      objectReference: {fileID: 0}
+    - target: {fileID: 1621984593301680901, guid: e15a004c8e86f422c85f1b6da8453405, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5653128597841599891, guid: e15a004c8e86f422c85f1b6da8453405, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22017,7 +22029,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2089858773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41226,7 +41238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -212, y: -70}
+  m_AnchoredPosition: {x: -622, y: -328}
   m_SizeDelta: {x: 100, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &8726687759143933687
