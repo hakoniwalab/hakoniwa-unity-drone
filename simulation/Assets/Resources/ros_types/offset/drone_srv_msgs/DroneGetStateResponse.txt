@@ -1,0 +1,6 @@
+single:primitive:ok:bool:0:4
+single:primitive:is_ready:bool:4:4
+single:struct:current_pose:geometry_msgs/Pose:8:56
+single:struct:battery_status:hako_msgs/HakoBatteryStatus:64:32
+single:primitive:mode:string:96:128
+single:primitive:message:string:224:128

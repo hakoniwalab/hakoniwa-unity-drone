@@ -1,0 +1,2 @@
+single:struct:header:ServiceResponseHeader:0:268
+single:struct:body:RegisterClientResponse:268:16

@@ -1,0 +1,2 @@
+single:primitive:drone_name:string:0:128
+single:primitive:tilt_angle_deg:float32:128:4

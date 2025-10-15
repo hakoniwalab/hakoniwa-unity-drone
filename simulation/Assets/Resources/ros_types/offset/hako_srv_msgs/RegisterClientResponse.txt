@@ -1,0 +1,4 @@
+single:primitive:service_id:uint32:0:4
+single:primitive:client_id:uint32:4:4
+single:primitive:request_channel_id:uint32:8:4
+single:primitive:response_channel_id:uint32:12:4

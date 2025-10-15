@@ -1,0 +1,6 @@
+single:primitive:drone_name:string:0:128
+single:struct:target_pose:geometry_msgs/Vector3:128:24
+single:primitive:speed_m_s:float32:152:4
+single:primitive:yaw_deg:float32:156:4
+single:primitive:tolerance_m:float32:160:4
+single:primitive:timeout_sec:float32:164:4

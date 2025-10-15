@@ -1,0 +1,11 @@
+single:primitive:total_len:uint32:0:4
+single:primitive:magicno:uint32:4:4
+single:primitive:version:uint16:8:2
+single:primitive:flags:uint16:10:2
+single:primitive:meta_request_type:uint32:12:4
+single:primitive:hako_time_us:uint64:16:8
+single:primitive:asset_time_us:uint64:24:8
+single:primitive:real_time_us:uint64:32:8
+single:primitive:robot_name:string:40:128
+single:primitive:channel_id:int32:168:4
+single:primitive:body_len:uint32:172:4

@@ -1,0 +1,3 @@
+single:primitive:drone_name:string:0:128
+single:primitive:grab_on:bool:128:4
+single:primitive:timeout_sec:float32:132:4

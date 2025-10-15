@@ -1,0 +1,4 @@
+single:primitive:ok:bool:0:4
+single:struct:point_cloud:sensor_msgs/PointCloud2:4:176
+single:struct:lidar_pose:geometry_msgs/Pose:184:56
+single:primitive:message:string:240:128
