@@ -2,3 +2,4 @@ single:struct:d_temp:hako_msgs/DisturbanceTemperature:0:8
 single:struct:d_wind:hako_msgs/DisturbanceWind:8:24
 single:struct:d_atm:hako_msgs/DisturbanceAtm:32:8
 single:struct:d_boundary:hako_msgs/DisturbanceBoundary:40:48
+varray:struct:d_user_custom:hako_msgs/DisturbanceUserCustom:88:8:8

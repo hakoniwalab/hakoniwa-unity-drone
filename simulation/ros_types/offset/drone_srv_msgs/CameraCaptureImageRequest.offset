@@ -1,0 +1,2 @@
+single:primitive:drone_name:string:0:128
+single:primitive:image_type:string:128:128

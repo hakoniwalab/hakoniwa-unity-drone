@@ -1,0 +1,3 @@
+single:primitive:ok:bool:0:4
+varray:primitive:data:uint8:4:1:8
+single:primitive:message:string:12:128
