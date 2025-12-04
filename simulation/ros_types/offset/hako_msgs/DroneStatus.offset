@@ -1,3 +1,4 @@
 single:primitive:flight_mode:int32:0:4
 single:primitive:internal_state:int32:4:4
 single:struct:propeller_wind:geometry_msgs/Vector3:8:24
+single:primitive:collided_counts:int32:32:4
