@@ -74,21 +74,20 @@ namespace hakoniwa.drone
                 Debug.Log("Gabber is not found.");
             }
 
-            if (input_type == DroneControlInputType.PS4)
+            // DroneControlInputType selection & builder
+            if (input_type == DroneControlInputType.Xr)
             {
-                controller_input = HakoDroneInputManager.Instance;
-            }
-            else if (input_type == DroneControlInputType.Xbox)
-            {
-                //TODO
+                // Quest Input Controller
+                controller_input = HakoDroneXrInputManager.Instance;
             }
             else
             {
-                controller_input = HakoDroneXrInputManager.Instance;
-            }
+                // Gamepad Input Controller
+                controller_input = HakoDroneInputManager.Instance;
+            }        
         }
 
-        public float move_step = 1.0f;  // ˆê‰ñ‚Ì“®‚«‚ÌƒXƒeƒbƒv—Ê
+        public float move_step = 1.0f;  // ï¿½ï¿½ï¿½Ì“ï¿½ï¿½ï¿½ï¿½ÌƒXï¿½eï¿½bï¿½vï¿½ï¿½
         private float camera_move_button_time_duration = 0f;
         public float camera_move_button_threshold_speedup = 1.0f;
         public bool is_pressed_up = false;
