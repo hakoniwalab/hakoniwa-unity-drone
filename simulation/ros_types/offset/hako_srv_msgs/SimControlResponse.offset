@@ -1,0 +1,2 @@
+single:primitive:status_code:uint32:0:4
+single:primitive:message:string:4:128

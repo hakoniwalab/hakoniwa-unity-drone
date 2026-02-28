@@ -1,0 +1,3 @@
+single:primitive:name:string:0:128
+single:primitive:event_code:uint32:128:4
+single:primitive:result_code:uint32:132:4

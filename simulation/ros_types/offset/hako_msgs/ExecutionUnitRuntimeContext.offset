@@ -1,0 +1,4 @@
+single:primitive:config_hash:uint32:0:4
+single:primitive:epoch:uint8:4:1
+single:primitive:owner_id:uint8:5:1
+varray:primitive:context:uint8:8:1:8

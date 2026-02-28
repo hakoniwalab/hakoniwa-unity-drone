@@ -1,0 +1,5 @@
+single:primitive:sim_state:uint32:0:4
+single:primitive:master_time:int64:8:8
+single:primitive:is_pdu_created:bool:16:4
+single:primitive:is_simulation_mode:bool:20:4
+single:primitive:is_pdu_sync_mode:bool:24:4

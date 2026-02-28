@@ -1,0 +1,6 @@
+single:primitive:config_hash:uint32:0:4
+single:primitive:unit_count:uint16:4:2
+varray:primitive:status:uint8:8:1:8
+varray:primitive:epoch:uint8:16:1:8
+varray:primitive:curr_owner_node_id:uint8:24:1:8
+varray:primitive:next_owner_node_id:uint8:32:1:8
