@@ -8,7 +8,7 @@
   { "channel_id": 6 , "pdu_size": 88     , "name": "drone_cmd_takeoff"        , "type": "hako_msgs/HakoDroneCmdTakeoff" },
   { "channel_id": 7 , "pdu_size": 104    , "name": "drone_cmd_move"           , "type": "hako_msgs/HakoDroneCmdMove" },
   { "channel_id": 8 , "pdu_size": 88     , "name": "drone_cmd_land"           , "type": "hako_msgs/HakoDroneCmdLand" },
-  { "channel_id": 9 , "pdu_size": 160    , "name": "hako_cmd_game"            , "type": "hako_msgs/GameControllerOperation" },
+  { "channel_id": 9 , "pdu_size": 136    , "name": "hako_cmd_game"            , "type": "hako_msgs/GameControllerOperation" },
   { "channel_id": 10, "pdu_size": 44     , "name": "hako_cmd_camera"          , "type": "hako_msgs/HakoCmdCamera" },
   { "channel_id": 11, "pdu_size": 64     , "name": "hako_cmd_camera_move"     , "type": "hako_msgs/HakoCmdCameraMove" },
   { "channel_id": 12, "pdu_size": 1002992, "name": "hako_camera_data"         , "type": "hako_msgs/HakoCameraData" },
